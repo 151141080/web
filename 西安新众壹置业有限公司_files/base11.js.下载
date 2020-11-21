@@ -1,0 +1,181 @@
+// JavaScript Document
+$(function(){
+	var timeoutid = 0;
+	var currentindex = 1;
+	var maxindex = 2;
+	
+	$("#bannerbtn1").click(function(){		
+		fadeInBanner(1);
+	});
+	$("#bannerbtn2").click(function(){		
+		fadeInBanner(2);
+	});
+	
+	function fadeInBanner(index)
+	{
+		if(index != currentindex)
+		{
+			var banner = $("#bannerli" + index);
+			var bannerbtn = $("#bannerbtn" + index);
+			$(banner).parent().find("li").fadeOut(100);
+			$(banner).fadeIn(900);
+			$(banner).find(".thumb").css("left","830px").css("opacity","0.2");
+			$(banner).find(".thumb").animate({left:'280px',opacity:'1'},1000)		
+			$(bannerbtn).parent().find("span").removeClass("on");
+			$(bannerbtn).addClass("on");
+			
+			currentindex = index;
+			if(timeoutid != 0){
+				clearTimeout(timeoutid);
+			}
+			timeoutid = setTimeout(function(){
+				var nextindex = currentindex + 1;
+				if(nextindex > maxindex) nextindex = 1;
+				fadeInBanner(nextindex);
+			},8000);			
+		}		
+	}
+	
+	timeoutid = setTimeout(function(){
+		fadeInBanner(2);
+	},8000);
+});
+
+
+
+$(function(){  
+	$(".client .client_main ul").find("li").each(function() { 
+	  $(this).hover(function() {
+		  $(this).find(".show").css( "display","block"); 
+		    }, 
+		  function() {
+			  $(this).find(".show").css( "display","none");
+			  }
+		  );
+		}); 
+})
+
+
+$(function(){  
+	$(".service .service_main  ul").find("li").each(function() { 
+	  $(this).hover(function() {
+		  $(this).find(".show").css( "display","block"); 
+		  $(this).find("h2").css("color","#dd1407")
+		    }, 
+		  function() {
+			  $(this).find(".show").css( "display","none");
+			   $(this).find("h2").css("color","#666")
+			  }
+		  );
+		}); 
+})
+
+
+$(function(){  
+	$(".service .service_main  ul").find("li").each(function() { 
+	  $(this).hover(function() {
+		  $(this).find(".show").css( "display","block"); 
+		  $(this).find("h2").css("color","#dd1407")
+		    }, 
+		  function() {
+			  $(this).find(".show").css( "display","none");
+			   $(this).find("h2").css("color","#666")
+			  }
+		  );
+		}); 
+})
+
+$(function(){  
+	$(".pros .service_main  ul").find("li").each(function() { 
+	  $(this).hover(function() {
+		  $(this).find(".show").css( "display","block"); 
+		  $(this).find("h2").css("color","#fff")
+		    }, 
+		  function() {
+			  $(this).find(".show").css( "display","none");
+			   $(this).find("h2").css("color","#fff")
+			  }
+		  );
+		}); 
+})
+
+
+
+
+
+$(function(){  
+	$(".pros .service_main  ul").find("li").each(function() { 
+	  $(this).hover(function() {
+		  $(this).find(".show").css( "display","block"); 
+		  $(this).find("h2").css("color","#fff")
+		    }, 
+		  function() {
+			  $(this).find(".show").css( "display","none");
+			   $(this).find("h2").css("color","#fff")
+			  }
+		  );
+		}); 
+})
+
+$(function(){  
+	$(".page_banner ul").find("li").each(function() { 
+	  $(this).hover(function() {
+		  $(this).find(".show").css( "display","block"); 
+		    }, 
+		  function() {
+			  $(this).find(".show").css( "display","none");
+			  }
+		  );
+		}); 
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  
+$(function(){
+	$(".page_pros .page_pros_main ul li:even").addClass("on");
+	})
+	
+	
+$(function(){  
+	$(".help-item").find(".q-box").each(function() { 
+	  $(".q-box") .click(function() {
+		  $(this).find(".a-box").hide(); 
+		    }, 
+		  function() {
+			  $(this).find(".show").css( "display","none");
+			  }
+		  );
+		}); 
+})
+
+$(function(){  
+	$(".solutions .solutions_main ul").find("li").each(function() { 
+	  $(this).hover(function() {
+		  $(this).css( "background","#f6f6f6");
+		  $(this).find(".show").css( "display","block");
+		  $(this).find("a").css( "color","#d80d00"); 
+		  
+		    }, 
+		  function() {
+			  $(this).css( "background","#fff");
+			  $(this).find(".show").css( "display","none");
+			  $(this).find("a").css( "color","#666"); 
+			  }
+		  );
+		}); 
+})
